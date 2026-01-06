@@ -1,0 +1,17 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: environment
+  labels:
+    purpose: env-practice
+    project: roboshop
+    environment: dev
+spec:
+  containers:
+  - name: nginx
+    image: nginx:latest
+  env:
+  - name: NAME 
+    value: "Praneeth"
+  - name: AGE
+    value: "24"
