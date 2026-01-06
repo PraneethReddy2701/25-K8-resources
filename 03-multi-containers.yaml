@@ -5,10 +5,10 @@ metadata:
   labels:
     project: roboshop
     environment: dev
-    purpose: multi-containers practice
+    purpose: multi-containers-practice
 spec:
   containers:
   - name: nginx
     image: nginx:latest
-    
+
     
