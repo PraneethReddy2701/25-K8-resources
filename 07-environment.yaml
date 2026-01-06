@@ -10,8 +10,8 @@ spec:
   containers:
   - name: nginx
     image: nginx:latest
-  env:
-  - name: NAME 
-    value: "Praneeth"
-  - name: AGE
-    value: "24"
+    env:
+    - name: NAME 
+      value: "Praneeth"
+    - name: AGE
+      value: "24"
