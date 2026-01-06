@@ -1,0 +1,15 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: annotations
+  labels:
+    purpose: annotations-practice
+    project: roboshop
+    environment: dev
+  annotations:
+    description: "this pod is created for annotations practice"  # can go upto 256 characters
+    jenkins: "https://jenkins.com/build/job/roboshop-catalogue/3"  # can be used in build time and no limitation in characters
+spec:
+  containers:
+  - name: nginx
+    image: nginx:latest
