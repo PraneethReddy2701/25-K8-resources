@@ -1,0 +1,12 @@
+apiVersion: v1
+kind: configMap
+metadata:
+  name: configMap
+  labels:
+    purpose: configmap-practice
+    project: roboshop
+    environment: dev
+data:
+  NAME: "Praneeth"
+  AGE: "24"
+  BRANCH: "cse"
