@@ -20,7 +20,7 @@ metadata:
   labels:
     purpose: service-np-practice
 spec:
-  type: nodePort
+  type: NodePort
   selector:
     purpose: service-np-practice
     project: roboshop
