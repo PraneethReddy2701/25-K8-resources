@@ -20,7 +20,7 @@ metadata:
   labels:
     purpose: service-cluster-practice
 spec:
-  selectors:
+  selector:
     purpose: service-cluster-practice
     project: roboshop
     environment: dev
