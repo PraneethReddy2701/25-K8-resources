@@ -16,13 +16,14 @@ spec:
       environment: dev
         
 # this is pod definition. these are the pod labels
-    template:
-      metadata:
-        labels:
-          purpose: rs-practice
-          project: roboshop
-          environment: dev
-        spec:
-          containers:
-          - name: nginx
-            image: nginx:latest
+  template:
+    metadata:
+      labels:
+        purpose: rs-practice
+        project: roboshop
+        environment: dev
+    spec:
+      containers:
+      - name: nginx
+        image: nginx:latest
+
