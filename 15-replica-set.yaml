@@ -11,11 +11,11 @@ spec:
 # these are the labels replicaset uses to create pod replicas, this should match pod labels
   selector:
     matchLabels:
-      labels:
-        purpose: rs-practice
-        project: roboshop
-        environment: dev
-# these are the pod labels
+      purpose: rs-practice
+      project: roboshop
+      environment: dev
+        
+# this is pod definition. these are the pod labels
     template:
       metadata:
         labels:
