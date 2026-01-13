@@ -30,10 +30,11 @@ kind: Pod
 metadata:
   name: nginx-ebs-static
 spec:
+  topology.kubernetes.io/zone : us-east-1b
   containers:
   - name: nginx
     image: nginx:latest
-    volumeMounts:
+    volumeMounts:        # docker run -v host-path:container-path
     - name: persistent-storage
       mountPath: /usr/share/nginx/html
   volumes:
