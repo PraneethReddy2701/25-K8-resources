@@ -4,4 +4,4 @@ metadata:
   name: ebs-dynamic-sc
 provisioner: ebs.csi.aws.com
 reclaimPolicy: Retain # default value is Delete
-volumeBindingMode: WaitForFirstConsumer
+volumeBindingMode: WaitForFirstConsumer  # disk will be created when pod is getting created
