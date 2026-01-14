@@ -9,3 +9,22 @@ spec:
   resources:
     requests:
       storage: 5Gi
+---
+apiVersion: v1
+kind: Pod
+metadata:
+  name: nginx-efs-dynamic
+  labels:
+    purpose: efs-dynamic-practice
+    project: roboshop
+spec:
+  containers:
+  - name: nginx
+    image: nginx:latest
+    volumeMounts:        # docker run -v host-path:container-path
+    - name: persistent-storage
+      mountPath: /usr/share/nginx/html
+  volumes:
+  - name: persistent-storage
+    persistentVolumeClaim:
+      claimName: efs-dynamic-pvc
