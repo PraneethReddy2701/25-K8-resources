@@ -47,3 +47,20 @@ spec:
   - name: persistent-storage
     persistentVolumeClaim:
       claimName: efs-static-pvc
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: efs-static-svc
+  labels:
+    purpose: efs-static-practice
+    project: roboshop
+spec:
+  type: LoadBalancer
+  selector:
+    purpose: efs-static-practice
+    project: roboshop
+  ports:
+  - protocol: TCP
+    port: 80
+    targetPort: 80
