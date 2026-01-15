@@ -14,3 +14,18 @@ spec:
     purpose: statefulset-practice
     project: roboshop
 ---
+apiVersion: v1
+kind: Service
+metadata:
+  name: statefulset-svc
+  labels:
+    purpose: statefulset-practice
+    project: roboshop
+spec:
+  ports:
+  - port: 80
+    name: web
+  selector:
+    purpose: statefulset-practice
+    project: roboshop
+    
