@@ -6,7 +6,7 @@ metadata:
   labels:
     purpose: deployment-practice
 spec:
-  replicas: 4
+  replicas: 3
 # these are the labels replicaset use to create pod replicas, this should match the pod labels
   selector:
     matchLabels:
@@ -24,4 +24,21 @@ spec:
       containers:
       - name: nginx
         image: nginx:stable-perl
-
+---
+apiVersion: v1
+kind: Service 
+metadata:
+  name: deployment-svc 
+  labels:
+    purpose: deployment-practice
+    project: roboshop
+    environment: dev
+spec:
+  selector:
+    purpose: deployment-practice
+    project: roboshop
+    environment: dev
+  ports:
+  - protocol: TCP
+    port: 80      # service port
+    targetPort: 80  # container port
