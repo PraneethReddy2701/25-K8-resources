@@ -28,4 +28,36 @@ spec:
   selector:
     purpose: statefulset-practice
     project: roboshop
-    
+---
+apiVersion: apps/v1
+kind: StatefulSet
+metadata:
+  name: statefulset
+spec:
+  selector:
+    matchLabels:
+      purpose: statefulset-practice
+      project: roboshop # has to match .spec.template.metadata.labels
+  serviceName: "statefulset-headless-svc"  # headless service name
+  replicas: 3 # by default is 1
+  template:
+    metadata:
+      labels:
+        purpose: statefulset-practice
+        project: roboshop # has to match .spec.selector.matchLabels
+    spec:
+      containers:
+      - name: nginx
+        image: nginx:latest
+        volumeMounts:
+        - name: www
+          mountPath: /usr/share/nginx/html
+  volumeClaimTemplates:
+  - metadata:
+      name: www
+    spec:
+      accessModes: [ "ReadWriteOnce" ]
+      storageClassName: "ebs-dynamic-sc"
+      resources:
+        requests:
+          storage: 2Gi
