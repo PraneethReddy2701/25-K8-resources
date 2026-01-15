@@ -34,6 +34,8 @@ kind: StatefulSet
 metadata:
   name: statefulset
 spec:
+  # nodeSelector:
+  #   topology.kubernetes.io/zone : us-east-1c
   selector:
     matchLabels:
       purpose: statefulset-practice
