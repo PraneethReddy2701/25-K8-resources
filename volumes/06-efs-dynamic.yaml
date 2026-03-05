@@ -4,7 +4,7 @@ metadata:
   name: efs-dynamic-pvc
 spec:
   accessModes:
-    - ReadWriteMany
+    - ReadWriteOnce
   storageClassName: efs-roboshop
   resources:
     requests:
