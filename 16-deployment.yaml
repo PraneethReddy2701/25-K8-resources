@@ -5,6 +5,8 @@ metadata:
 # these are deployment labels
   labels:
     purpose: deployment-practice
+    project: roboshop
+    environment: dev
 spec:
   replicas: 3
 # these are the labels replicaset use to create pod replicas, this should match the pod labels
